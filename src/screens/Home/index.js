@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Image, Text, ImageBackground, ScrollView, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import styles from './styles';
+import vw from '../../Units/vw';
 import p1 from '../../../assets/images/product1.png';
 import p2 from '../../../assets/images/product2.png';
 import p3 from '../../../assets/images/product3.png';
@@ -15,7 +16,9 @@ import p9 from '../../../assets/images/product9.png';
 import p10 from '../../../assets/images/product10.png';
 import p11 from '../../../assets/images/product11.png';
 import p12 from '../../../assets/images/product12.png';
-
+import Products from '../../components/products/index';
+import { Button } from '../../components';
+// import { SearchBar } from '../../components/SearchBar/Index';
 const Home = ({ navigation }) => {
   const productShirts = [
     {
@@ -35,6 +38,24 @@ const Home = ({ navigation }) => {
       productImg: p3,
       productTitle: 'Kid Fashion',
       bgColor: '#EFFCFA'
+    },
+    {
+      key: '4',
+      productImg: p2,
+      productTitle: 'Women Fashion',
+      bgColor: '#FEE4E0'
+    },
+    {
+      key: '5',
+      productImg: p3,
+      productTitle: 'Kid Fashion',
+      bgColor: '#EFFCFA'
+    },
+    {
+      key: '6',
+      productImg: p1,
+      productTitle: 'Men Fashion',
+      bgColor: '#DAF2FD'
     },
   ];
   const newArrivals = [
@@ -75,15 +96,57 @@ const Home = ({ navigation }) => {
       bgColor: ''
     },
   ];
+  const productsData = [
+    {
+      key: '1',
+      productImg: p10,
+      productTitle: 'Men Shirt',
+      price: '$15.00'
+    },
+    {
+      key: '2',
+      productImg: p11,
+      productTitle: 'Long Sleeve Jacket',
+      price: '$15.00'
+    },
+    {
+      key: '3',
+      productImg: p12,
+      productTitle: 'Tight Pants Legens',
+      price: '$15.00'
+    },
+    {
+      key: '4',
+      productImg: p11,
+      productTitle: 'Long Sleeve Jacket',
+      price: '$15.00'
+    },
+    {
+      key: '5',
+      productImg: p12,
+      productTitle: 'Tight Pants Legens',
+      price: '$15.00'
+    },
+    {
+      key: '6',
+      productImg: p10,
+      productTitle: 'Men Shirt',
+      price: '$15.00'
+    },
+
+  ];
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      showsHorizontalScrollIndicator={false}
-    >
-      <View>
-        <View style={styles.header}>
-          <Text style={styles.headerTxt}>HOME</Text>
-        </View>
+    <View>
+      {/* <View style={{ position: 'relative' }}> */}
+      <View style={styles.header}>
+        <Text style={styles.headerTxt}>HOME</Text>
+      </View>
+      {/* <SearchBar style={{ position: 'absolute', top: -10, flex: 1 }} /> */}
+      {/* </View> */}
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+      >
         {/* categories Component */}
         <View style={styles.container}>
           <View style={styles.row}>
@@ -118,21 +181,26 @@ const Home = ({ navigation }) => {
           </View>
           {/* CATEGORIES */}
           <Text style={styles.heading}>CATEGORIES</Text>
-          <View style={[styles.row, { flexWrap: 'wrap' }]} >
-            {
-              productShirts.map((item, index) => {
-                return (
-                  <View style={[styles.col, { marginVertical: 4 }]} key={index} >
-                    <View style={[styles.cardWrap, { backgroundColor: item.bgColor ? item.bgColor : "transparent" }]}>
-                      <Image source={item.productImg}
-                        style={styles.productImg} />
-                      <Text style={styles.productTitle} >{item.productTitle}</Text>
+          <ScrollView
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            pagingEnabled={true}>
+            <View style={[styles.row, { flexWrap: 'wrap' }]} >
+              {
+                productShirts.map((item, index) => {
+                  return (
+                    <View style={[styles.col, { marginVertical: 4 }]} key={index} >
+                      <View style={[styles.cardWrap, { backgroundColor: item.bgColor ? item.bgColor : "transparent" }]}>
+                        <Image source={item.productImg}
+                          style={styles.productImg} />
+                        <Text style={styles.productTitle} >{item.productTitle}</Text>
+                      </View>
                     </View>
-                  </View>
-                );
-              })
-            }
-          </View>
+                  );
+                })
+              }
+            </View>
+          </ScrollView>
           {/* New Arrival */}
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginVertical: 6 }}>
             <Text style={styles.heading}>New Arrival</Text>
@@ -149,15 +217,42 @@ const Home = ({ navigation }) => {
                       <Image source={item.productImg}
                         style={styles.productImg} />
                     </View>
-                    <Text style={[styles.productTitle, {textAlign:'center'}]} >{item.productTitle}</Text>
+                    <Text style={[styles.productTitle, { textAlign: 'center' }]} >{item.productTitle}</Text>
+                  </View>
+                );
+              })
+            }
+          </View>
+          {/* Banner */}
+          <ImageBackground style={styles.banners} source={require('../../../assets/images/banner.png')} >
+            <View style={styles.bannersContent}>
+              <Text style={styles.bannerHeading}>Popular</Text>
+              <Text style={styles.bannerHeading}>Collections</Text>
+            </View>
+          </ImageBackground>
+          {/* Products */}
+          <View style={[styles.row, { flexWrap: 'wrap', marginVertical: 30, backgroundColor: '#fff' }]} >
+            {
+              productsData.map((item, index) => {
+                return (
+                  <View style={[styles.col, { marginVertical: 10 }]} key={index}>
+                    <TouchableOpacity
+                      style={{ flex: 1 }}
+                      // onPress={() => navigation.navigate("ProductScreens", { screen: "ProductScreens" })}
+                      onPress={() => navigation.navigate("StepForm", { screen: "StepForm" })}
+                    >
+                      <Products
+                        data={item}
+                      />
+                    </TouchableOpacity>
                   </View>
                 );
               })
             }
           </View>
         </View>
-      </View>
-    </ScrollView >
+      </ScrollView >
+    </View >
   );
 };
 

@@ -12,8 +12,8 @@ export default StyleSheet.create({
     fontSize: 4 * vw,
   },
   container: {
-    padding: 5 * vw,
-    backgroundColor:'#FFFFFF'
+    padding: 2 * vw,
+    backgroundColor: '#FFFFFF'
   },
   heading: {
     fontSize: 4 * vw,
@@ -96,7 +96,7 @@ export default StyleSheet.create({
   },
   col: {
     flexDirection: 'column',
-    marginHorizontal: 2 * vw,
+    marginHorizontal: 1 * vw,
   },
   cardWrap: {
     paddingHorizontal: 1 * vw,
@@ -108,7 +108,7 @@ export default StyleSheet.create({
     borderTopRightRadius: 3,
     borderTopLeftRadius: 3,
     overflow: 'hidden',
-    width: 26 * vw,
+    width: 30 * vw,
     minHeight: 15 * vh
   },
   secCardWrap: {
@@ -116,10 +116,10 @@ export default StyleSheet.create({
     paddingVertical: 1 * vh,
     justifyContent: 'center',
     alignItems: 'center',
-    width: 26 * vw,
+    width: 30 * vw,
     minHeight: 15 * vh,
     borderWidth: 1,
-    borderColor:'#707070',
+    borderColor: '#707070',
     borderBottomLeftRadius: 2,
     borderBottomRightRadius: 2,
     borderTopRightRadius: 2,
@@ -156,5 +156,23 @@ export default StyleSheet.create({
     textTransform: 'uppercase',
     fontSize: 3 * vw
   },
+  banners: {
+    width: '100%',
+    paddingVertical: 8 * vh,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+  },
+  bannersContent: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    marginLeft: 10 * vw,
+  },
+  bannerHeading: {
+    fontSize: 7 * vw,
+    fontWeight: 'bold',
+    color: '#333333',
+  }
 
 });

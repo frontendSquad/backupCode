@@ -65,12 +65,8 @@ export default StyleSheet.create({
     borderColor: '#EFEFEF',
     borderWidth: 2,
     borderRadius: 10,
-    paddingVertical: 1 * vh,
+    paddingVertical: 1.5 * vh,
     paddingLeft: 10 * vw,
-  },
-  inpWrap: {
-    position: 'relative',
-    marginVertical: 10,
   },
   inpIcon: {
     position: 'absolute',

@@ -4,10 +4,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Favorite, GetStarted, Home, Notification, Profile } from '../screens';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomNavigator from '../components/molecules/BottomNavigator';
+import ProductScreens from '../screens/ProductScreens/Index';
 import Categories from '../screens/Categories';
 import Detail from '../screens/Detail';
 import Login from '../screens/auth/Login';
 import SignUp from '../screens/auth/SignUp';
+import StepForm from '../screens/StepForm/index'
 const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
@@ -58,6 +60,11 @@ const Router = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
+        name="ProductScreens"
+        component={ProductScreens}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
         name="Login"
         component={Login}
         options={{ headerShown: false }}
@@ -77,7 +84,13 @@ const Router = () => {
         component={Detail}
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="StepForm"
+        component={StepForm}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
+
   );
 };
 
