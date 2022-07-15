@@ -9,7 +9,9 @@ import Categories from '../screens/Categories';
 import Detail from '../screens/Detail';
 import Login from '../screens/auth/Login';
 import SignUp from '../screens/auth/SignUp';
-import StepForm from '../screens/StepForm/index'
+import StepForm from '../screens/StepForm/index';
+import wishlist from '../screens/wishlist/Index';
+import Brands from '../screens/Brands/Index';
 const Stack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
@@ -23,8 +25,8 @@ function MainApp() {
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Favorite"
-        component={Favorite}
+        name="wishlist"
+        component={wishlist}
         options={{ headerShown: false }}
       />
       <Tab.Screen
@@ -87,6 +89,11 @@ const Router = () => {
       <Stack.Screen
         name="StepForm"
         component={StepForm}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Brands"
+        component={Brands}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

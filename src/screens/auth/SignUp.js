@@ -39,7 +39,7 @@ const SignUp = ({ navigation }) => {
           <Text style={styles.secText}>Already have an account? <Text onPress={() => navigation.navigate("Login", { screen: "Login" })}  >Sign In </Text> </Text>
         </ImageBackground>
       </KeyboardAwareScrollView>
-    </View >
+    </View>
   )
 }
 export default SignUp;

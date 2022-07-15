@@ -21,7 +21,7 @@ export default StyleSheet.create({
     marginVertical: 3 * vh,
     paddingVertical: 3 * vh,
     paddingHorizontal: 5 * vw,
-    borderRadius: 10,
+    borderRadius: 10, 
   },
   textCenter: {
     textAlign: 'center',
@@ -59,7 +59,7 @@ export default StyleSheet.create({
     color: '#fff',
     fontSize: 4 * vw,
     fontWeight: 'bold',
-    marginVertical: 2 * vh
+    marginVertical: 2 * vh,
   },
   primInp: {
     borderColor: '#EFEFEF',

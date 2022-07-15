@@ -21,7 +21,7 @@ const Icon = ({ label, isFocused }) => {
   switch (label) {
     case 'Home':
       return isFocused ? <EntIcon name={'home'} size={22} style={{ color: '#8E5609' }} /> : <EntIcon name={'home'} size={22} />;
-    case 'Favorite':
+    case 'wishlist':
       return isFocused ? <MatIcons name={'favorite'} size={22} style={{ color: '#8E5609' }} /> : <MatIcons name={'favorite-border'} size={22} />;
     case 'Notification':
       return isFocused ? <Ionic name={'notifications'} size={22} style={{ color: '#8E5609' }} /> : <Ionic name={'notifications-outline'} size={22} />;

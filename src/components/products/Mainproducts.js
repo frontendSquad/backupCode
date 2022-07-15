@@ -22,7 +22,7 @@ const Mainproducts = (props) => {
 const styles = StyleSheet.create({
   mainproductWrap: {
     position: 'relative',
-    borderColor: 'red',
+    borderColor: '#fff',
     width: 45 * vw,
     textAlign: 'center',
     justifyContent: 'center',
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   },
   favIconFill: {
     color: '#FABC10',
-    fontSize: 7 * vw, 
+    fontSize: 7 * vw,
   }
 })
 

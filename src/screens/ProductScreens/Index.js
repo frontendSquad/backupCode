@@ -86,7 +86,7 @@ const Index = ({ navigation }) => {
       price: '$15.00'
     },
 
-  ];
+  ]; 
   return (
     <View style={{ marginBottom: 8 * vh }}>
       {/* Fixed Header */}

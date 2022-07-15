@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { View, Image, Text, ImageBackground, ScrollView, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import styles from './styles';
@@ -204,7 +203,7 @@ const Home = ({ navigation }) => {
           {/* New Arrival */}
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginVertical: 6 }}>
             <Text style={styles.heading}>New Arrival</Text>
-            < TouchableOpacity style={styles.secBtn}>
+            <TouchableOpacity style={styles.secBtn}>
               <Text style={styles.btnText}>VIEW ALL</Text>
             </TouchableOpacity>
           </View>
@@ -238,8 +237,8 @@ const Home = ({ navigation }) => {
                   <View style={[styles.col, { marginVertical: 10 }]} key={index}>
                     <TouchableOpacity
                       style={{ flex: 1 }}
-                      // onPress={() => navigation.navigate("ProductScreens", { screen: "ProductScreens" })}
-                      onPress={() => navigation.navigate("StepForm", { screen: "StepForm" })}
+                      // onPress={() => navigation.navigate("ProductScreens", { screen: "ProductScreens" })} 
+                      onPress={() => navigation.navigate("Brands", { screen: "Brands" })}
                     >
                       <Products
                         data={item}
@@ -251,8 +250,8 @@ const Home = ({ navigation }) => {
             }
           </View>
         </View>
-      </ScrollView >
-    </View >
+      </ScrollView>
+    </View>
   );
 };
 

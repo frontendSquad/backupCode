@@ -10,10 +10,12 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: '#fff',
     fontSize: 4 * vw,
+    textTransform:'uppercase'
   },
   container: {
     padding: 2 * vw,
-    backgroundColor: '#FFFFFF'
+    backgroundColor: '#FFFFFF',
+    marginBottom: 5 * vh
   },
   heading: {
     fontSize: 4 * vw,
