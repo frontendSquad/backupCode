@@ -12,7 +12,7 @@ const GetStarted = ({ navigation }) => {
           <Image source={require('../../../assets/images/logo.png')} style={styles.logo} />
         </View>
         <View style={styles.wrapperSlogan}>
-          <Text style={styles.txtSlogan}>Shop Your Daily </Text>
+          <Text style={styles.txtSlogan}>Shop Daily </Text>
           <Text style={styles.txtSlogan}>Necessary</Text>
         </View>
         <Gap height={90} />
